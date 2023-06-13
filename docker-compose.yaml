@@ -1,0 +1,15 @@
+version: '1'
+
+volumes:
+  web_volume:
+
+services:
+  web-hello:
+    build: .
+    restart: always
+    environment:
+      - TZ=Europe/Moscow
+    ports:
+      - 8080:8080
+    volumes:
+      - web_volume:/usr/src/app/
